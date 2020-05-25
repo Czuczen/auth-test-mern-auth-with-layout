@@ -37,8 +37,8 @@ export default function LoginPage(props) {
       <Header
         absolute
         color="transparent"
-        brand="Material Kit React"
-        rightLinks={<HeaderLinks />}
+        brand="Czuczen Games"
+        // rightLinks={<HeaderLinks />}
         {...rest}
       />
       <div
@@ -55,7 +55,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
+                    <h4>Logowanie</h4>
                     <div className={classes.socialLine}>
                       <Button
                         justIcon
@@ -86,10 +86,10 @@ export default function LoginPage(props) {
                       </Button>
                     </div>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  {/* <p className={classes.divider}>Or Be Classical</p> */}
                   <CardBody>
                     <CustomInput
-                      labelText="First Name..."
+                      labelText="Imię..."
                       id="first"
                       formControlProps={{
                         fullWidth: true
@@ -119,7 +119,7 @@ export default function LoginPage(props) {
                       }}
                     />
                     <CustomInput
-                      labelText="Password"
+                      labelText="Hasło"
                       id="pass"
                       formControlProps={{
                         fullWidth: true
@@ -139,7 +139,7 @@ export default function LoginPage(props) {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
-                      Get started
+                      Zaloguj
                     </Button>
                   </CardFooter>
                 </form>

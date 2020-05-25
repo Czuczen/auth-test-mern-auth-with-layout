@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
@@ -8,49 +7,17 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-// import Navbar from "./components/layout/Navbar";
-// import Landing from "./components/layout/Landing";
-// import Register from "./components/auth/Register";
-// import Login from "./components/auth/Login";
-// import PrivateRoute from "./components/private-route/PrivateRoute";
-// import Dashboard from "./components/dashboard/Dashboard";
+// import Navbar from "./components/boilerplate-components/layout/Navbar";
+import Landing from "./components/boilerplate-components/layout/Landing";
+import Register from "./components/boilerplate-components/auth/Register";
+import Login from "./components/boilerplate-components/auth/Login";
+import PrivateRoute from "./components/boilerplate-components/private-route/PrivateRoute";
+
+import Reacteroids from "./ReacteroidsGame/Reacteroids";
+
+import Dashboard from "./components/boilerplate-components/dashboard/Dashboard";
 
 import "./App.css";
-
-
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-// import { Router, Route, Switch } from "react-router-dom";
-
-import "./assets/scss/material-kit-react.scss?v=1.8.0";
-
-// pages for this product
-import Components from "./views/Components/Components.js";
-import LandingPage from "./views/LandingPage/LandingPage.js";
-import ProfilePage from "./views/ProfilePage/ProfilePage.js";
-import LoginPage from "./views/LoginPage/LoginPage.js";
-
-var hist = createBrowserHistory();
-
-// ReactDOM.render(
-//   <Router history={hist}>
-//     <Switch>
-//       <Route path="/landing-page" component={LandingPage} />
-//       <Route path="/profile-page" component={ProfilePage} />
-//       <Route path="/login-page" component={LoginPage} />
-//       <Route path="/" component={Components} />
-//     </Switch>
-//   </Router>,
-//   document.getElementById("root")
-// );
-
-
-
-
-
-
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -75,13 +42,15 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={hist}>
+        <Router>
           <div className="App">
             {/* <Navbar /> */}
-            <Route path="/landing-page" component={LandingPage} />
-            <Route path="/profile-page" component={ProfilePage} />
-            <Route path="/login-page" component={LoginPage} />
-            <Route path="/" component={Components} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Reacteroids} />
+            </Switch>
           </div>
         </Router>
       </Provider>
