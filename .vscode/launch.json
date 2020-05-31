@@ -1,26 +1,17 @@
 {
-    "version": "0.1.0",
     "configurations": [
-        {
-            "name": "Launch localhost",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost/debug",
-            "webRoot": "${workspaceFolder}/wwwroot"
-        },
-        {
-            "name": "Launch index.html",
-            "type": "chrome",
-            "request": "launch",
-            "file": "${workspaceFolder}/index.html"
-        },
-        {
-            "name": "Attach to url with files served from ./out",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "url": "http://localhost/debug",
-            "webRoot": "${workspaceFolder}/server.js"
-        }
+    {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch chrome against localhsot",
+        // "address": "TCP/IP address of process to be debugged",
+        // "port": 9229,
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceFolder}",
+        // "remoteRoot": "Absolute path to the remote directory containing the program",
+        // "skipFiles": [
+        //     "<node_internals>/**"
+        // ]
+    },
     ]
 }
