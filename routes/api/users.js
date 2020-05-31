@@ -106,4 +106,42 @@ router.post("/login", (req, res) => {
   });
 });
 
+
+
+
+
+
+
+router.post("/update", (req, res) =>
+{
+  try
+  {
+    console.log("request body w api:",  req.body);
+    var userId = req.body._id;
+
+      const filter = {
+        _id : userId,
+        };
+
+      const update = {
+        max_score: req.body.max_score,
+        name: req.body.name,
+        };
+
+      User.findOneAndUpdate(filter, update, {useFindAndModify: false}, (error, doc) =>
+      {
+        console.log("error w find and update", error);
+        console.log("użytkownik przed update", doc);
+      }
+      ).then(res => {
+        console.log("res po update", res);
+      });
+  }
+  catch(error)
+  {
+      console.log(error);
+  }
+});
+
+
 module.exports = router;

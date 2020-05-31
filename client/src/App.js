@@ -14,6 +14,7 @@ import Login from "./components/boilerplate-components/auth/Login";
 import PrivateRoute from "./components/boilerplate-components/private-route/PrivateRoute";
 
 import Reacteroids from "./ReacteroidsGame/Reacteroids";
+// import { CurrentUserProvider } from "./context/CurrentUser.context";
 
 // import Dashboard from "./components/boilerplate-components/dashboard/Dashboard";
 
@@ -43,15 +44,18 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
-            {/* <Navbar /> */}
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Reacteroids} />
-            </Switch>
-          </div>
+          {/* <CurrentUserProvider> */}
+            <div className="App">
+              {/* <Navbar /> */}
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Reacteroids} />
+                {/* <Route exact path="/dashboard" component={Reacteroids} /> */}
+              </Switch>
+            </div>
+          {/* </CurrentUserProvider> */}
         </Router>
       </Provider>
     );

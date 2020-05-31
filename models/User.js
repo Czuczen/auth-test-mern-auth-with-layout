@@ -18,6 +18,10 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  max_score: {
+    type: Number,
+    default: 0
   }
 });
 

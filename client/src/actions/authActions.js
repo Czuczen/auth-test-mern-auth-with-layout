@@ -66,3 +66,17 @@ export const logoutUser = () => dispatch => {
   // Set current user to empty object {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };
+
+
+export const updateUser = (userData, history) => dispatch => {
+  axios
+    .post("/api/users/update", userData)
+    // .then(res => history.push("/login"))
+    .then(res => console.log("response z api: ", res))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
