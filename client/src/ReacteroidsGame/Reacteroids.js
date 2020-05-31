@@ -91,8 +91,8 @@ class Reacteroids extends Component {
 
   update() {
     const context = this.state.context;
-    const keys = this.state.keys;
-    const ship = this.ship[0];
+    // const keys = this.state.keys;
+    // const ship = this.ship[0];
 
     context.save();
     context.scale(this.state.screen.ratio, this.state.screen.ratio);
@@ -171,7 +171,7 @@ class Reacteroids extends Component {
   }
 
   generateAsteroids(howMany){
-    let asteroids = [];
+    // let asteroids = [];
     let ship = this.ship[0];
     for (let i = 0; i < howMany; i++) {
       let asteroid = new Asteroid({

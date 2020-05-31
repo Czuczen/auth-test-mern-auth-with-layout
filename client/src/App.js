@@ -15,7 +15,7 @@ import PrivateRoute from "./components/boilerplate-components/private-route/Priv
 
 import Reacteroids from "./ReacteroidsGame/Reacteroids";
 
-import Dashboard from "./components/boilerplate-components/dashboard/Dashboard";
+// import Dashboard from "./components/boilerplate-components/dashboard/Dashboard";
 
 import "./App.css";
 
